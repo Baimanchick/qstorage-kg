@@ -53,7 +53,7 @@ export const View = () => {
                 <TextFieldPassword
                   name="password"
                   type="password"
-                  label="Сыр сөз"
+                  label="Пароль"
                   rules={AuthRules.Password}
                 />
 
