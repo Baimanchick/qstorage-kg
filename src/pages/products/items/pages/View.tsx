@@ -50,8 +50,8 @@ export const ViewProduct: React.FC<Props> = (props) => {
           <Flex className={cls.actions_main} justify="space-between" align="center">
             <h2>Товар ”{itemDetail.title}”</h2>
             <div className={cls.actions}>
-              <Button onClick={() => router.push(`/products/items/edit/${itemDetail.slug}`)} type="primary">Редактировать</Button>
-              <Button onClick={() => deleteProduct(itemDetail.slug)} className={cls.btn_red}>Удалить</Button>
+              <Button onClick={() => router.push(`/products/items/edit/${itemDetail.slug}`)} type="primary">Өзгөртүү</Button>
+              <Button onClick={() => deleteProduct(itemDetail.slug)} className={cls.btn_red}>Өчүрүү</Button>
             </div>
           </Flex>
         </div>
@@ -88,20 +88,20 @@ export const ViewProduct: React.FC<Props> = (props) => {
               bordered
               column={1}
             >
-              <Descriptions.Item label="Цена">{itemDetail.price} сом</Descriptions.Item>
-              <Descriptions.Item label="Описание">
+              <Descriptions.Item label="Баасы">{itemDetail.price} сом</Descriptions.Item>
+              <Descriptions.Item label="Сүрөттөмө">
                 {getFormattedDescription()}
                 {itemDetail.description ? (
                   itemDetail?.description.length > 245 && (
                     <button onClick={toggleDescription} className={'moreButton'}>
-                      {expanded ? 'Скрыть' : 'Еще...'}
+                      {expanded ? 'Жашыруу' : 'Дагы...'}
                     </button>
                   )
-                ) : 'У продукта нету описание'}
+                ) : 'Продукттун сүрөттөмөсү жок'}
               </Descriptions.Item>
-              <Descriptions.Item label="Срок годности">{itemDetail.expiration_date}</Descriptions.Item>
+              <Descriptions.Item label="Жарактуулук мөөнөтү">{itemDetail.expiration_date}</Descriptions.Item>
               <Descriptions.Item label="Склад №">{itemDetail.warehouse}</Descriptions.Item>
-              <Descriptions.Item label="Цвета">
+              <Descriptions.Item label="Түстөрү">
                 {itemDetail.colors && itemDetail.colors.length > 0 ? (
                   itemDetail.colors.map((color) => (
                     <span
@@ -117,7 +117,7 @@ export const ViewProduct: React.FC<Props> = (props) => {
                     />
                   ))
                 ) : (
-                  'Нет цветов'
+                  'Түстөр жок'
                 )}
               </Descriptions.Item>
             </Descriptions>
@@ -126,7 +126,7 @@ export const ViewProduct: React.FC<Props> = (props) => {
 
         <Divider />
 
-        <Card title="Характеристики" size="small" className={cls.characteristicsBlock}>
+        <Card title="Мүнөздөмөлөрү" size="small" className={cls.characteristicsBlock}>
           {Object.keys(parsedCharacteristics).length ? (
             <Descriptions size="small" bordered column={1}>
               {parsedCharacteristics.map((characteristic, index) => (
@@ -137,7 +137,7 @@ export const ViewProduct: React.FC<Props> = (props) => {
               ))}
             </Descriptions>
           ) : (
-            <p>Нет дополнительных характеристик</p>
+            <p>Кошумча мүнөздөмөлөр жок</p>
           )}
         </Card>
 

@@ -28,13 +28,13 @@ function useCreate() {
 
       if (response.status === 201) {
         api.success({
-          message: 'Сотрудник успешно был создан',
+          message: 'Кызматкер ийгиликтүү түзүлдү',
           placement: 'top',
         })
         router.push('/employees/')
       } else {
         api.error({
-          message: 'Что-то пошло не так',
+          message: 'Бир нерсе туура эмес кетти',
           placement: 'top',
         })
       }

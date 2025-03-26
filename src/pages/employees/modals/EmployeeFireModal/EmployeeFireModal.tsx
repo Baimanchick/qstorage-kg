@@ -24,7 +24,7 @@ const EmployeeFireModal = ({ isModalOpen, onCloseModal, user }: Props) => {
   return (
     <Modal
       rootClassName={cls.modal}
-      title="Увольнение сотрудника"
+      title="Кызматкерди иштен бошотуу"
       open={isModalOpen}
       centered={true}
       width="625px"
@@ -33,8 +33,8 @@ const EmployeeFireModal = ({ isModalOpen, onCloseModal, user }: Props) => {
       }}
       footer={(
         <Flex className={cls.btns} key={'btns'} gap={10} justify="flex-end">
-          <Button onClick={onCloseModal}>Отмена</Button>
-          <Button type="primary" htmlType="submit" form="fireEmployee" loading={submitted}>Уволить сотрудника</Button>
+          <Button onClick={onCloseModal}>Баш тартуу</Button>
+          <Button type="primary" htmlType="submit"  form="fireEmployee" loading={submitted}>Кызматкерди бошотуу</Button>
         </Flex>
       )}
     >
@@ -52,10 +52,10 @@ const EmployeeFireModal = ({ isModalOpen, onCloseModal, user }: Props) => {
         }} id="fireEmployee"
         >
           <Flex className={cls.form} gap={10}>
-            <DatePickerField name="termination_date" placeholder="Введите дату увольнение" />
-            <DatePickerField name="termination_order_date" placeholder="Введите дату указа увольнение" />
+            <DatePickerField name="termination_date" placeholder="Бошотулган күндү киргизиңиз" />
+            <DatePickerField name="termination_order_date" placeholder="Бошотуу буйругунун күнүн киргизиңиз" />
             <FormItem name="termination_reason" noStyle>
-              <TextArea placeholder="Введите причину увольнение" />
+              <TextArea placeholder="Бошотуунун себебин киргизиңиз" />
             </FormItem>
           </Flex>
         </Form>

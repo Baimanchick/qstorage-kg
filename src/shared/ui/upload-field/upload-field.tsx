@@ -20,9 +20,9 @@ const CustomUploadProps: UploadProps = {
       console.log(info.file, info.fileList)
     }
     if (info.file.status === 'done') {
-      message.success(`${info.file.name} file uploaded successfully`)
+      message.success(`${info.file.name} файлы ийгиликтүү жүктөлдү`)
     } else if (info.file.status === 'error') {
-      message.error(`${info.file.name} file upload failed.`)
+      message.error(`${info.file.name} файлын жүктөө ишке ашкан жок.`)
     }
   },
 }
@@ -43,7 +43,7 @@ export const UploadField: React.FC<Props> = (props) => (
     label={props.label}
   >
     <Upload {...CustomUploadProps}>
-      <Button icon={<UploadOutlined />}>Click to Upload</Button>
+      <Button icon={<UploadOutlined />}>Жүктөө үчүн басыңыз</Button>
     </Upload>
   </FormItem>
 )

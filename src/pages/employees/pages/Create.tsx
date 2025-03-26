@@ -27,23 +27,23 @@ export const Create = () => {
         </div>
 
         <Flex className={cls.main_title}>
-          <h2>Создать сотрудника</h2>
+          <h2>Кызматкер түзүү</h2>
         </Flex>
 
         <Flex className={cls.main_form}>
           <Form className={cls.form} onFinish={(data) => CreateEmployee(data)}>
-            <TextField name="first_name" placeholder="Введите имя пользвотеля" label="Имя сотрудника" rules={[{ required: true, message: 'Поле обязательно' }]} />
-            <TextField name="last_name" placeholder="Введите фамилию пользвотеля" label="Фамилия сотрудника" rules={[{ required: true, message: 'Поле обязательно' }]} />
-            <TextField name="surname" placeholder="Введите отчество пользвотеля" label="Отчество сотрудника" />
-            <TextField name="email" placeholder="Введите email пользвотеля" label="Email сотрудника" rules={[{ required: true, message: 'Поле обязательно' }]} />
-            <Form.Item name={'role'} label="Выберите роль" rules={[{ required: true, message: 'Поле обязательно' }]} className={cls.radio_field}>
+            <TextField name="first_name" placeholder="Колдонуучунун атын киргизиңиз" label="Кызматкердин аты" rules={[{ required: true, message: 'Талаа сөзсүз' }]} />
+            <TextField name="last_name" placeholder="Колдонуучунун фамилиясын киргизиңиз" label="Кызматкердин фамилиясы" rules={[{ required: true, message: 'Талаа сөзсүз' }]} />
+            <TextField name="surname" placeholder="Колдонуучунун атасын атын киргизиңиз" label="Кызматкердин атасынын аты" />
+            <TextField name="email" placeholder="Колдонуучунун email дарегин киргизиңиз" label="Кызматкердин Email'и" rules={[{ required: true, message: 'Талаа сөзсүз' }]} />
+            <Form.Item name={'role'} label="Ролду тандаңыз" rules={[{ required: true, message: 'Талаа сөзсүз' }]} className={cls.radio_field}>
               <Radio.Group>
                 <Radio value={'manager'}>Менеджер</Radio>
                 <Radio value={'worker'}>Работник</Radio>
                 <Radio value={'director'}>Директор</Radio>
               </Radio.Group>
             </Form.Item>
-            <Button htmlType="submit" type="primary" className={cls.btn} loading={submitted}>Сохранить</Button>
+            <Button htmlType="submit" type="primary" className={cls.btn} loading={submitted}>Сактоо</Button>
           </Form>
         </Flex>
 

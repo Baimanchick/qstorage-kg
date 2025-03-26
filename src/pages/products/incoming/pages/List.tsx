@@ -9,7 +9,6 @@ import dayjs from 'dayjs'
 import Link from 'next/link'
 
 import { Breadcrumb } from '@/shared/ui/breadcrumb/breadcrumb'
-// import { FilterPanel } from '@/shared/ui/filter-panel/filter-panel'
 
 import { ProductsIncoming } from '..'
 import cls from '../styles/list.module.css'
@@ -20,7 +19,7 @@ const { Paragraph } = Typography
 const createColumns = (checkStatus: any, getTagColor: any): ColumnsType<ProductsIncomingTypes.Table> => {
   const columns: ColumnsType<ProductsIncomingTypes.Table> = [
     {
-      title: 'ID прихода',
+      title: 'Приходнун ID',
       dataIndex: 'id',
       key: 'id',
       render: (_, record) => (
@@ -28,7 +27,7 @@ const createColumns = (checkStatus: any, getTagColor: any): ColumnsType<Products
       ),
     },
     {
-      title: 'Номер документа',
+      title: 'Документтин номери',
       dataIndex: 'act',
       key: 'act',
       render: (_, record) => (
@@ -36,7 +35,7 @@ const createColumns = (checkStatus: any, getTagColor: any): ColumnsType<Products
       ),
     },
     {
-      title: 'Кол-во товаров',
+      title: 'Товарлардын саны',
       dataIndex: 'total_quantity',
       key: 'total_quantity',
     },
@@ -49,24 +48,22 @@ const createColumns = (checkStatus: any, getTagColor: any): ColumnsType<Products
       ),
     },
     {
-      title: 'Дата',
+      title: 'Күнү',
       dataIndex: 'date',
       key: 'date',
       render: (date: string) => {
         const formatted = dayjs(date).format('DD.MM.YYYY')
 
-        return (
-          <span>{formatted}</span>
-        )
+        return <span>{formatted}</span>
       },
     },
     {
-      title: 'Поставщик',
+      title: 'Жеткирүүчү',
       dataIndex: 'supplier',
       key: 'supplier',
     },
     {
-      title: 'Ответственный',
+      title: 'Жооптуу',
       dataIndex: 'responsible',
       key: 'responsible',
       render: (responsible: ProductsIncomingTypes.Responsible) => (
@@ -116,7 +113,7 @@ export const ListProductsIncoming: React.FC = () => {
       <div className="main">
         <div className={cls.navigation__info}>
           <Breadcrumb items={breadcrumbData}/>
-          <h2>Приход товаров</h2>
+          <h2>Товар приходу</h2>
         </div>
         <div className={cls.header}>
           <Flex gap={8} className={cls.header__btn}>
@@ -128,8 +125,7 @@ export const ListProductsIncoming: React.FC = () => {
             </Button>
           </Flex>
           <Flex gap={10} className={cls.filter_and_btn}>
-            {/* <FilterPanel defaultValue={'all_products'} options={[{ value: 'all_products', label: 'Все товары' }, { value: 'not_all_products', label: 'Не все товары' }]}/> */}
-            <Button type="primary" onClick={() => router.push('/products/incoming/create')} className={cls.btn}>Добавить приход</Button>
+            <Button type="primary" onClick={() => router.push('/products/incoming/create')} className={cls.btn}>Приход кошуу</Button>
           </Flex>
         </div>
         <Table<ProductsIncomingTypes.Table>
@@ -149,9 +145,9 @@ export const ListProductsIncoming: React.FC = () => {
                   { title: 'Товар', dataIndex: 'product_title', key: 'product_title', render: (_, record) => (
                     <Link href={`/products/items/${record.product.slug}`}>{record.product_title}</Link>
                   ) },
-                  { title: 'Количество', dataIndex: 'quantity', key: 'quantity' },
-                  { title: 'Цена закупки', dataIndex: 'purchase_price', key: 'purchase_price' },
-                  { title: 'Общая стоимость', dataIndex: 'total_price', key: 'total_price' },
+                  { title: 'Саны', dataIndex: 'quantity', key: 'quantity' },
+                  { title: 'Сатып алуу баасы', dataIndex: 'purchase_price', key: 'purchase_price' },
+                  { title: 'Жалпы сумма', dataIndex: 'total_price', key: 'total_price' },
                 ]}
                 dataSource={record.items}
                 rowKey={(item) => item.product.slug ? item.product.slug : ''}

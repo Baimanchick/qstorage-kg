@@ -26,14 +26,14 @@ export const Create = () => {
       {contextHolder}
       <div className={cls.navigation__info}>
         <Breadcrumb items={breadcrumbData}/>
-        <h1 className={cls.warehouses_title}>Создать новый склад</h1>
+        <h1 className={cls.warehouses_title}>Жаңы склад түзүү</h1>
       </div>
 
       <Form form={form} className={cls.form} onFinish={(data) => createWarehouse(data)}>
-        <TextField name="title" placeholder="Название склада" label="Введите название склада" />
-        <h1 className={cls.image_title}>Выберите картинку для склада</h1>
+        <TextField name="title" placeholder="Складдын аталышы" label="Складдын аталышын жазыңыз" />
+        <h1 className={cls.image_title}>Склад үчүн сүрөт тандаңыз</h1>
         <DraggerFileField name="image" maxCount={1} />
-        <Button htmlType="submit" type="primary" className={cls.btn} loading={submitted}>Создать</Button>
+        <Button htmlType="submit" type="primary" className={cls.btn} loading={submitted}>Түзүү</Button>
       </Form>
     </div>
   )

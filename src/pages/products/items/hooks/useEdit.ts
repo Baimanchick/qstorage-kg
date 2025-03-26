@@ -86,13 +86,13 @@ function useEdit() {
 
       if (response.status === 200) {
         api.success({
-          message: 'Товар успешно был изменён',
+          message: 'Товар ийгиликтүү өзгөртүлдү',
           placement: 'top',
         })
         router.push(`/products/items/${slug}`)
       } else {
         api.error({
-          message: 'Что-то пошло не так',
+          message: 'Бир нерсе туура эмес кетти',
           placement: 'top',
         })
       }
@@ -109,19 +109,19 @@ function useEdit() {
 
       if (response.status === 200) {
         api.success({
-          message: 'Изображение успешно удалено',
+          message: 'Сүрөт ийгиликтүү өчүрүлдү',
           placement: 'top',
         })
       } else {
         api.error({
-          message: 'Не удалось удалить изображение',
+          message: 'Сүрөттү өчүрүү мүмкүн болбоду',
           placement: 'top',
         })
       }
     } catch (error) {
       console.error('Ошибка удаления изображения', error)
       api.error({
-        message: 'Ошибка при удалении изображения',
+        message: 'Сүрөттү өчүрүүдө ката кетти',
         placement: 'top',
       })
     }

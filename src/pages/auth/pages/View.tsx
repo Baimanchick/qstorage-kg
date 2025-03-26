@@ -36,24 +36,24 @@ export const View = () => {
         <Flex align="center" gap={90} className={cls.main_flex}>
           <Flex justify="flex-start" align="flex-start" gap={10} className={cls.logo}>
             <QStorageLogoLight/>
-            <p className={cls.text}>Включаем бизнес на максимум!</p>
+            <p className={cls.text}>Бизнесиңизди максимумга чыгарабыз!</p>
           </Flex>
           <Form className={cls.form} onFinish={onFinish} name="loginForm" form={form}>
-            <h1>Вход</h1>
+            <h1>Кирүү</h1>
             {contextHolder}
             <Flex className={cls.form_flex} justify="center" align="center">
               <Flex className={cls.form__items} gap={16}>
                 <TextField
                   name="email"
                   type="email"
-                  label="E-mail / Электронная почта"
+                  label="E-mail / Электрондук почта"
                   rules={AuthRules.Email}
                 />
 
                 <TextFieldPassword
                   name="password"
                   type="password"
-                  label="Пароль"
+                  label="Сыр сөз"
                   rules={AuthRules.Password}
                 />
 
@@ -63,7 +63,7 @@ export const View = () => {
                   htmlType="submit"
                   className={cls.form__btn}
                 >
-                  Войти
+                  Кирүү
                 </Button>
               </Flex>
             </Flex>

@@ -51,7 +51,7 @@ export const Edit: React.FC<Props> = (props) => {
       </Flex>
 
       <Flex className={cls.main_title}>
-        <h2>Изменить проект “{projectTitle}”</h2>
+        <h2>Проектти өзгөртүү “{projectTitle}”</h2>
       </Flex>
 
       <LoaderData isLoading={isProjectsLoading} data={items}>
@@ -63,30 +63,29 @@ export const Edit: React.FC<Props> = (props) => {
               ...items,
               image: initialImageFileList,
             }}
-            // onFinish={(data) => console.log(data)}
             onFinish={(data) => EditProject(props.project_id, data)}
           >
             <TextField
               name="title"
-              placeholder="Введите название проекта"
-              label="Название проекта"
+              placeholder="Проекттин атын жазыңыз"
+              label="Проекттин аталышы"
             />
             <TextField
               name="description"
-              placeholder="Введите описание проекта"
-              label="Описание проекта"
+              placeholder="Проекттин сүрөттөмөсүн жазыңыз"
+              label="Проекттин сүрөттөмөсү"
             />
 
             <ColorPickerField
               name="color"
-              label="Выберите цвет"
+              label="Түс тандаңыз"
               onClick={handleClickColor}
               options={color_options}
               selectedColor={selectedColor}
             />
 
             <DraggerFileField
-              label="Выберите картинку"
+              label="Сүрөттү тандаңыз"
               name="image"
               valuePropName="fileList"
               className={cls.dragger_filed}
@@ -99,7 +98,7 @@ export const Edit: React.FC<Props> = (props) => {
               className={cls.btn}
               loading={submitted}
             >
-              Сохранить
+              Сактоо
             </Button>
           </Form>
         </div>

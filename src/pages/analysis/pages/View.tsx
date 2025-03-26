@@ -57,7 +57,7 @@ export const View = () => {
     <div className="main">
       <Flex className={cls.navigation__info}>
         <Breadcrumb items={breadcrumbData}/>
-        <h2 className={cls.main_title}>Анализы</h2>
+        <h2 className={cls.main_title}>Анализдер</h2>
       </Flex>
       <Flex className={cls.header} justify={'space-between'}>
         <Flex gap={4} className={cls.btn_container}>
@@ -71,18 +71,18 @@ export const View = () => {
         <Flex className={cls.filter_panel}>
           <DatePickerField
             pickerMode="year"
-            placeholder="Выберите год"
+            placeholder="Жылды тандаңыз"
             value={yearValue}
             onChange={handleChangeYearDatePicker}
           />
           <DatePickerField
             pickerMode="month"
-            placeholder="Выберите месяц"
+            placeholder="Айды тандаңыз"
             value={monthValue}
             onChange={handleChangeMonthDatePicker}
           />
           <DatePickerField
-            placeholder="Выберите день"
+            placeholder="Күндү тандаңыз"
             value={dayValue}
             onChange={handleChangeDayDatePicker}
           />
@@ -93,23 +93,23 @@ export const View = () => {
         <Col>
           <Card className={cls.card} classNames={{ body: cls.card_body }}>
             <Flex className={cls.card_header}>
-              <span className={cls.rest}>Общий остаток</span>
+              <span className={cls.rest}>Жалпы калдыгы</span>
               <InfoCircleOutlined className={cls.info_icon} size={16} />
             </Flex>
             <Flex className={cls.card_info}>
               <h2 className={cls.card_title}>KGS 140,000</h2>
               <Flex className={cls.card_info_container}>
                 <h3 className={cls.card_text}>
-                  WoW Change 12% <CaretUpOutlined className={cls.icon_up} />
+                  WoW Өзгөрүү 12% <CaretUpOutlined className={cls.icon_up} />
                 </h3>
                 <h3 className={cls.card_text}>
-                  DoD Change 11% <CaretDownOutlined className={cls.icon_down} />
+                  DoD Өзгөрүү 11% <CaretDownOutlined className={cls.icon_down} />
                 </h3>
               </Flex>
             </Flex>
             <Divider className={cls.divider}/>
             <Flex gap={8}>
-              <h3 className={cls.card_text}>Ежедневный приход</h3>
+              <h3 className={cls.card_text}>Күнүмдүк Приход</h3>
               <h3 className={cls.card_text}>KGS 12,423</h3>
             </Flex>
           </Card>
@@ -128,7 +128,7 @@ export const View = () => {
             </Flex>
             <Divider className={cls.divider}/>
             <Flex gap={8}>
-              <h3 className={cls.card_text}>Ежедневный</h3>
+              <h3 className={cls.card_text}>Күнүмдүк</h3>
               <h3 className={cls.card_text}>1,234</h3>
             </Flex>
           </Card>
@@ -147,7 +147,7 @@ export const View = () => {
             </Flex>
             <Divider className={cls.divider}/>
             <Flex gap={8}>
-              <h3 className={cls.card_text}>Коэффициент конверсии</h3>
+              <h3 className={cls.card_text}>Конверсия коэффициенти</h3>
               <h3 className={cls.card_text}>60%</h3>
             </Flex>
           </Card>
@@ -155,7 +155,7 @@ export const View = () => {
         <Col>
           <Card className={cls.card} classNames={{ body: cls.card_body }}>
             <Flex className={cls.card_header}>
-              <span className={cls.rest}>План заработка</span>
+              <span className={cls.rest}>Тапкан киреше планы</span>
               <InfoCircleOutlined className={cls.info_icon} size={16} />
             </Flex>
             <Flex className={cls.card_info}>
@@ -166,7 +166,7 @@ export const View = () => {
             </Flex>
             <Divider className={cls.divider}/>
             <Flex gap={8}>
-              <h3 className={cls.card_text}>Коэффициент конверсии</h3>
+              <h3 className={cls.card_text}>Конверсия коэффициенти</h3>
               <h3 className={cls.card_text}>60%</h3>
             </Flex>
           </Card>
@@ -176,7 +176,7 @@ export const View = () => {
         <Flex justify={'space-between'} align={'flex-start'} className={cls.graph_container}>
           <DetailedBarCharts/>
           <Flex className={cls.statistics}>
-            <h2 className={cls.graph_main_title}>Статистика прихода</h2>
+            <h2 className={cls.graph_main_title}>Приходнүн статистикасы</h2>
             <ul className={cls.graph_navigation}>
               {navigation_data.map((item) => (
                 <div className={cls.graph_navigation__item} key={item.id}>

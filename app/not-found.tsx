@@ -9,9 +9,9 @@ export default function NotFoundPage() {
   return (
     <Result
       status="404"
-      title="Страница не найдена (404)"
-      subTitle="Похоже, вы оказались не там где надо!"
-      extra={<Button type="primary" onClick={() => router.push('/products/incoming')}>Вернуться домой</Button>}
+      title="Баракча табылган жок (404)"
+      subTitle="Сиз керек эмес жерге кирип калдыңыз окшойт!"
+      extra={<Button type="primary" onClick={() => router.push('/products/incoming')}>Башкы бетке кайтуу</Button>}
     />
   )
 }

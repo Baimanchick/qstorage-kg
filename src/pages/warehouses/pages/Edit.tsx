@@ -10,7 +10,7 @@ import { Warehouses } from '..'
 import cls from '../styles/create.module.css'
 
 interface Props {
-    warehouse_id: number
+  warehouse_id: number
 }
 
 export const Edit = ({ warehouse_id }: Props) => {
@@ -37,17 +37,22 @@ export const Edit = ({ warehouse_id }: Props) => {
     <div className={'main'}>
       {contextHolder}
       <div className={cls.navigation__info}>
-        <Breadcrumb items={breadcrumbData}/>
-        <h1 className={cls.warehouses_title}>Редактировать склад</h1>
+        <Breadcrumb items={breadcrumbData} />
+        <h1 className={cls.warehouses_title}>Складды өзгөртүү</h1>
       </div>
 
       {
         isWarehouseLoading ? (
-          <Spin/>
+          <Spin />
         ) : (
-          <Form form={form} className={cls.form} onFinish={(data) => editWarehouse(data, warehouse_id)} initialValues={warehouse ? warehouse : undefined}>
-            <TextField name="title" placeholder="Название склада" label="Введите название склада" />
-            <Button htmlType="submit" type="primary" className={cls.btn} loading={submitted}>Изменить</Button>
+          <Form
+            form={form}
+            className={cls.form}
+            onFinish={(data) => editWarehouse(data, warehouse_id)}
+            initialValues={warehouse ? warehouse : undefined}
+          >
+            <TextField name="title" placeholder="Складдын аталышы" label="Складдын аталышын жазыңыз" />
+            <Button htmlType="submit" type="primary" className={cls.btn} loading={submitted}>Сактоо</Button>
           </Form>
         )
       }

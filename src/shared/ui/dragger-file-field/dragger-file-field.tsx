@@ -35,7 +35,7 @@ export const DraggerFileField: React.FC<Props> = (props) => {
 
     } catch (error) {
       console.error('Error deleting file:', error)
-      message.error('Ошибка при удалении файла')
+      message.error('Файл өчүрүүдө ката кетти')
     }
   }
 
@@ -62,8 +62,8 @@ export const DraggerFileField: React.FC<Props> = (props) => {
         <p className="ant-upload-drag-icon">
           <InboxOutlined />
         </p>
-        <p className="ant-upload-text">Выберите файл</p>
-        <p className="ant-upload-hint">Тут можно загрузить один или несколько файлов</p>
+        <p className="ant-upload-text">Файл тандаңыз</p>
+        <p className="ant-upload-hint">Бул жерге бир же бир нече файл жүктөсөңүз болот</p>
       </Dragger>
     </Form.Item>
   )

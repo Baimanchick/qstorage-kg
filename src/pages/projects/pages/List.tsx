@@ -3,7 +3,7 @@
 import React from 'react'
 
 import { BorderlessTableOutlined } from '@ant-design/icons'
-import {  Button, Flex, List as ListAntd } from 'antd'
+import { Button, Flex, List as ListAntd } from 'antd'
 import Image from 'next/image'
 
 import { NoPhoto } from '@/shared/assets/images/'
@@ -23,8 +23,6 @@ export const List = () => {
     }
   }, [createModal.isOpen])
 
-  console.log(projects)
-
   return (
     <div>
       <div className="main">
@@ -32,12 +30,12 @@ export const List = () => {
           <Breadcrumb items={breadcrumbData}/>
           <Flex className={cls.filter__panel}>
             <Button onClick={createModal.onOpen} className={cls.btn} type="primary">
-              Добавить проект
+              Проект кошуу
             </Button>
           </Flex>
         </Flex>
         <div className={cls.main_title}>
-          <h2>Проекты</h2>
+          <h2>Проекттер</h2>
         </div>
         <ListAntd
           size={'small'}

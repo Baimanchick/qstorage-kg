@@ -40,24 +40,24 @@ export const Edit: React.FC<Props> = (props) => {
         </div>
 
         <Flex className={cls.main_title}>
-          <h2>Изменить сотрудника</h2>
+          <h2>Кызматкерди өзгөртүү</h2>
         </Flex>
 
         <LoaderData isLoading={isEmployeeLoading} data={employee}>
           <Flex className={cls.main_form}>
             <Form form={form} className={cls.form} initialValues={{ ...employee }} onFinish={(data) => EditEmployee(props.employee_id, data)}>
-              <TextField name="first_name" placeholder="Введите имя пользвотеля" label="Имя сотрудника" />
-              <TextField name="last_name" placeholder="Введите фамилию пользвотеля" label="Фамилия сотрудника" />
-              <TextField name="surname" placeholder="Введите отчество пользвотеля" label="Отчество сотрудника" />
-              <TextField name="email" placeholder="Введите email пользвотеля" label="Email сотрудника" />
-              <Form.Item name={'role'} label="Выберите роль" rules={[{ required: true, message: 'Поле обязательно' }]} className={cls.radio_field}>
+              <TextField name="first_name" placeholder="Колдонуучунун атын киргизиңиз" label="Кызматкердин аты" />
+              <TextField name="last_name" placeholder="Колдонуучунун фамилиясын киргизиңиз" label="Кызматкердин фамилиясы" />
+              <TextField name="surname" placeholder="Колдонуучунун атасын атын киргизиңиз" label="Кызматкердин атасынын аты" />
+              <TextField name="email" placeholder="Колдонуучунун email дарегин киргизиңиз" label="Кызматкердин Email'и" />
+              <Form.Item name={'role'} label="Ролду тандаңыз" rules={[{ required: true, message: 'Талаа сөзсүз' }]} className={cls.radio_field}>
                 <Radio.Group>
                   <Radio value={'manager'}>Менеджер</Radio>
                   <Radio value={'worker'}>Работник</Radio>
                   <Radio value={'director'}>Директор</Radio>
                 </Radio.Group>
               </Form.Item>
-              <Button htmlType="submit" type="primary" className={cls.btn} loading={submitted}>Сохранить</Button>
+              <Button htmlType="submit" type="primary" className={cls.btn} loading={submitted}>Сактоо</Button>
             </Form>
           </Flex>
         </LoaderData>

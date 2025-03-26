@@ -49,14 +49,14 @@ const ModalCreateProjects: React.FC<Props> = ({ isModalOpen, onCloseModal }) => 
         body: cls.modal__body,
         footer: cls.modal__footer,
       }}
-      title="Добавить проект"
+      title="Проект кошуу"
       width="800px"
       open={isModalOpen}
       centered
       onCancel={onCloseModal}
       okButtonProps={{ style: { display: 'none' } }}
       footer={[
-        <Button disabled={submitted} onClick={onCloseModal} key="back">Отмена</Button>,
+        <Button disabled={submitted} onClick={onCloseModal} key="back">Жокко чыгаруу</Button>,
         <Button
           form="createProducts"
           htmlType="submit"
@@ -64,7 +64,7 @@ const ModalCreateProjects: React.FC<Props> = ({ isModalOpen, onCloseModal }) => 
           key="submit"
           loading={submitted}
         >
-          Создать
+          Түзүү
         </Button>,
       ]}
     >
@@ -79,22 +79,22 @@ const ModalCreateProjects: React.FC<Props> = ({ isModalOpen, onCloseModal }) => 
         <TextField
           name="title"
           type="text"
-          label="Название проекта"
-          placeholder="Введите название проекта"
+          label="Проекттин аталышы"
+          placeholder="Проекттин атын жазыңыз"
           rules={ProjectsRules.InputRules}
           className={cls.form__item}
         />
         <TextField
           name="description"
           type="text"
-          label="Описание"
-          placeholder="Введите описание"
+          label="Сүрөттөмө"
+          placeholder="Сүрөттөмө жазыңыз"
           className={cls.form__item}
         />
         <SelectField
           name="warehouse"
-          label="Склад"
-          placeholder="Выберите склад"
+          label="Кампа"
+          placeholder="Кампаны тандаңыз"
           className={cls.form__item}
           rules={ProjectsRules.InputRules}
           options={warehouses?.map(warehouse => ({
@@ -105,7 +105,7 @@ const ModalCreateProjects: React.FC<Props> = ({ isModalOpen, onCloseModal }) => 
         />
         <ColorPickerField
           name="color"
-          label="Выберите цвет"
+          label="Түс тандаңыз"
           initialValue="#FA541C"
           onClick={handleClickColor}
           options={color_options}

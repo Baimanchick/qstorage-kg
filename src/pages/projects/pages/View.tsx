@@ -42,7 +42,7 @@ export const View: React.FC<Props> = (props) => {
             onClick={() => deleteProject(Number(props.project_id))}
             className={cls.btn}
           >
-            Удалить
+            Өчүрүү
           </Button>
         </Flex>
       </Flex>
@@ -51,12 +51,9 @@ export const View: React.FC<Props> = (props) => {
         <h2>Проект “{items.title}”</h2>
       </div>
 
-      <Card
-        style={{ marginTop: 16 }}
-      >
+      <Card style={{ marginTop: 16 }}>
         <Flex className={cls.card_container} align="start" gap={24}>
           <Image
-            // eslint-disable-next-line react/no-array-index-key
             src={items.image || NoPhoto.src}
             alt={items.title}
             width={0}
@@ -69,17 +66,17 @@ export const View: React.FC<Props> = (props) => {
           <div style={{ flex: 1 }}>
             <h2 style={{ marginBottom: 8 }}>{items.title}</h2>
             <p style={{ color: '#888' }}>
-              Цвет: <b>{items.color}</b>
+              Түсү: <b>{items.color}</b>
             </p>
             <p style={{ color: '#888' }}>
-              Склад: <b>{items.warehouse.title}</b>
+              Кампа: <b>{items.warehouse.title}</b>
             </p>
 
             {getFormattedDescription()}
             {items.description && items.description.length !== 0 ? (
               items?.description.length > 185 ? (
                 <button onClick={toggleDescription} className={'moreButton'}>
-                  {expanded ? 'Скрыть' : 'Еще...'}
+                  {expanded ? 'Жабуу' : 'Толугураак...'}
                 </button>
               ) : null
             ) : null}
@@ -92,7 +89,7 @@ export const View: React.FC<Props> = (props) => {
                   router.push(`/projects/edit/${items.id}?title=${encodeURI(items.title)}`)
                 }}
               >
-                Изменить проект
+                Проекти өзгөртүү
               </Button>
             </div>
           </div>

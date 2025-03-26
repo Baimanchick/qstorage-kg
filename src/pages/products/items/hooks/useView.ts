@@ -31,7 +31,7 @@ function useView() {
       setItemDetail(response.data)
     } catch (error) {
       api.error({
-        message: 'Не удалось получить данные. Пожалуйста, попробуйте позже.',
+        message: 'Маалыматтарды алуу мүмкүн болбоду. Сураныч, кийинчерээк кайтып көрүңүз.',
         placement: 'top',
       })
       console.log(error)
@@ -44,7 +44,7 @@ function useView() {
       router.back()
 
       api.success({
-        message: 'Вы успешно удалили продукт',
+        message: 'Продукту ийгиликтүү өчүрдүңүз',
         placement: 'top',
       })
     } catch (error) {

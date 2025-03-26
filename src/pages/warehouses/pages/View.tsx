@@ -8,7 +8,7 @@ import { Warehouses } from '..'
 import cls from '../styles/view.module.css'
 
 interface Props {
-    warehouse_id: number
+  warehouse_id: number
 }
 
 export const View = ({ warehouse_id }: Props) => {
@@ -37,12 +37,23 @@ export const View = ({ warehouse_id }: Props) => {
         ) : (
           <>
             <div className={cls.navigation__info}>
-              <Breadcrumb items={[]}/>
+              <Breadcrumb items={[]} />
               <Flex align="center" justify="space-between">
-                <h1 className={cls.warehouses_title}>Склад {warehose?.title}</h1>
+                <h1 className={cls.warehouses_title}>Склад “{warehose?.title}”</h1>
                 <Flex gap={10}>
-                  <Button type="primary" onClick={() => router.push(`/warehouses/edit/${warehouse_id}`)}>Редактировать склад</Button>
-                  <Button disabled={submitted} danger onClick={() => WarehouseDELETE(warehouse_id)}>Удалить</Button>
+                  <Button
+                    type="primary"
+                    onClick={() => router.push(`/warehouses/edit/${warehouse_id}`)}
+                  >
+                    Складды өзгөртүү
+                  </Button>
+                  <Button
+                    disabled={submitted}
+                    danger
+                    onClick={() => WarehouseDELETE(warehouse_id)}
+                  >
+                    Өчүрүү
+                  </Button>
                 </Flex>
               </Flex>
             </div>

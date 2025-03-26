@@ -35,7 +35,7 @@ const createColumns = (): ColumnsType<StockType.Product> => {
       ),
     },
     {
-      title: 'Остаток',
+      title: 'Калдык',
       dataIndex: 'stock',
       key: 'stock',
     },
@@ -66,12 +66,12 @@ export const View = () => {
       </Flex>
 
       <Flex className={cls.inventory_info}>
-        <h2>Остатки товара “Склад №1”</h2>
+        <h2>Товар калдыктары “Склад №1”</h2>
         <div className={cls.inventory_info_main}>
           <div className={cls.inventory_info_container}>
             <Flex className={cls.inventory_info_item}>
               <div>
-                <h3 className={cls.sub_title}>Общий остаток</h3>
+                <h3 className={cls.sub_title}>Жалпы калдык</h3>
                 <span className={cls.stock_number}>{stock?.results.total_stock}</span>
               </div>
             </Flex>

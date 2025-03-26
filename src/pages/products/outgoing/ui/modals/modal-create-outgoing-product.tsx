@@ -49,14 +49,14 @@ const ModalCreateOutgoingItem: React.FC<Props> = ({ isModalOpen, onCloseModal })
         body: cls.modal__body,
         footer: cls.modal__footer,
       }}
-      title="Добавить товар"
+      title="Товар кошуу"
       width="800px"
       open={isModalOpen}
       centered
       onCancel={onCloseModal}
       okButtonProps={{ style: { display: 'none' } }}
       footer={[
-        <Button disabled={submitted} onClick={onCloseModal} key="back">Отмена</Button>,
+        <Button disabled={submitted} onClick={onCloseModal} key="back">Жокко чыгаруу</Button>,
         <Button
           form="createProducts"
           htmlType="submit"
@@ -65,7 +65,7 @@ const ModalCreateOutgoingItem: React.FC<Props> = ({ isModalOpen, onCloseModal })
           loading={submitted}
           style={{ boxShadow: 'none', border: 'none' }}
         >
-          Создать
+          Кошуу
         </Button>,
       ]}
     >
@@ -80,36 +80,36 @@ const ModalCreateOutgoingItem: React.FC<Props> = ({ isModalOpen, onCloseModal })
         <TextField
           name="title"
           type="text"
-          label="Название продукта"
-          placeholder="Введите название продукта"
+          label="Продукттун аталышы"
+          placeholder="Продукттун атын жазыңыз"
           rules={InputRules.Field}
           className={cls.form__item}
         />
         <TextField
           name="price"
           type="number"
-          label="Цена"
-          placeholder="Введите цену"
+          label="Баасы"
+          placeholder="Баасын жазыңыз"
           rules={InputRules.Field}
           className={cls.form__item}
         />
         <TextField
           name="description"
           type="text"
-          label="Описание"
-          placeholder="Введите описание продукта"
+          label="Сүрөттөмө"
+          placeholder="Продукт жөнүндө сүрөттөмө жазыңыз"
           className={cls.form__item}
         />
         <DatePickerField
           name="expiration_date"
-          label="Срок годности"
-          placeholder="Укажите срок годности товара"
+          label="Сактоо мөөнөтү"
+          placeholder="Товардын жарактуулук мөөнөтүн жазыңыз"
           className={cls.form__item}
         />
         <SelectField
           name="color"
-          label="Цвет"
-          placeholder="Выберите цвет"
+          label="Түсү"
+          placeholder="Түсүн тандаңыз"
           className={cls.form__item}
           options={productsColorsList?.map(color => ({
             title: color.name,
@@ -125,13 +125,13 @@ const ModalCreateOutgoingItem: React.FC<Props> = ({ isModalOpen, onCloseModal })
         <DynamicField
           listName="characteristics"
           className={cls.form__item}
-          buttonAddLabel="Добавить характеристики"
+          buttonAddLabel="Мүнөздөмө кошуу"
           rules={InputRules.Field}
         />
         <DraggerFileField
           name="images"
           valuePropName="images"
-          label="Выберите файл"
+          label="Файлды тандаңыз"
           className={cls.dragger_filed}
           {...defaultDraggerProps}
         />

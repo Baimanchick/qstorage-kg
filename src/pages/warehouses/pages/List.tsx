@@ -29,10 +29,10 @@ export const ListWarehouses = () => {
     <LoaderData isLoading={isWarehouseLoading} data={warehouses}>
       <div className="main">
         <Flex justify="space-between" align="center">
-          <h1 className={cls.warehouses_title}>Все склады</h1>
+          <h1 className={cls.warehouses_title}>Бардык складдар</h1>
 
           <Link href={'/warehouses/create'}>
-            <Button type="primary">Создать склад</Button>
+            <Button type="primary">Жаңы склад түзүү</Button>
           </Link>
         </Flex>
         <div className={cls.products_main}>

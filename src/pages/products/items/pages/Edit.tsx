@@ -59,7 +59,7 @@ export const EditProduct: React.FC<Props> = (props) => {
       </Flex>
 
       <Flex className={cls.main_title}>
-        <h2>Изменить товар “{items?.title}”</h2>
+        <h2>“{items?.title}” товарын өзгөртүү</h2>
       </Flex>
 
       <LoaderData isLoading={isItemsLoading} data={items}>
@@ -72,31 +72,31 @@ export const EditProduct: React.FC<Props> = (props) => {
           >
             <TextField
               name="title"
-              placeholder="Введите название товара"
-              label="Название товара"
+              placeholder="Товардын атын киргизиңиз"
+              label="Товардын аталышы"
               rules={ProductRules.Title}
             />
             <TextField
               name="price"
               type="number"
-              label="Цена"
-              placeholder="Введите цену"
+              label="Баасы"
+              placeholder="Баасын киргизиңиз"
               rules={ProductRules.Price}
             />
             <TextField
               name="description"
-              placeholder="Введите описание товара"
-              label="Описание товара"
+              placeholder="Товардын сүрөттөмөсүн киргизиңиз"
+              label="Товардын сүрөттөмөсү"
             />
             <DatePickerField
               name="expiration_date"
-              label="Срок годности"
-              placeholder="Укажите срок годности товара"
+              label="Жарактуулук мөөнөтү"
+              placeholder="Товардын жарактуулук мөөнөтүн белгилеңиз"
             />
             <SelectField
               name="color"
-              label="Цвет"
-              placeholder="Выберите цвет"
+              label="Түсү"
+              placeholder="Түс тандаңыз"
               className={cls.form__item}
               options={productsColorsList?.map(color => ({
                 title: color.name,
@@ -112,11 +112,11 @@ export const EditProduct: React.FC<Props> = (props) => {
             <DynamicField
               listName="characteristics"
               className={cls.form__item}
-              buttonAddLabel="Добавить характеристики"
+              buttonAddLabel="Мүнөздөмө кошуу"
             />
 
             <DraggerFileField
-              label="Выберите картинку"
+              label="Сүрөт тандаңыз"
               name="images"
               className={cls.dragger_filed}
               deleteFunc={DeleteProductImage}
@@ -129,7 +129,7 @@ export const EditProduct: React.FC<Props> = (props) => {
               className={cls.btn}
               loading={submitted}
             >
-              Сохранить
+              Сактоо
             </Button>
           </Form>
         </div>

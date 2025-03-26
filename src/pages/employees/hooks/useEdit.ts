@@ -45,13 +45,13 @@ function useEdit() {
 
       if (response.status === 200) {
         api.success({
-          message: 'Сотрудник успешно был изменён',
+          message: 'Кызматкер ийгиликтүү өзгөртүлдү',
           placement: 'top',
         })
         router.push('/employees/')
       } else {
         api.error({
-          message: 'Что-то пошло не так',
+          message: 'Бир нерсе туура эмес кетти',
           placement: 'top',
         })
       }

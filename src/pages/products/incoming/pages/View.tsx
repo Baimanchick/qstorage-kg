@@ -47,22 +47,21 @@ export const View: React.FC<Props> = ({ incoming_id }) => {
 
             <Flex className={cls.incoming_header} justify="space-between" align="center">
               <Flex align="center" gap={10} className={cls.incoming_header_title}>
-                <h2>Приход товаров #{incomingItem?.act}</h2>
+                <h2>Товар приходу #{incomingItem?.act}</h2>
 
                 <span className={cls.incoming_date}>{dayjs(incomingItem?.date).format('DD MMMM YYYY HH:mm')}</span>
                 <Tag color={getTagColor(incomingItem?.status ? incomingItem?.status : '')}>{checkStatus(incomingItem?.status ? incomingItem?.status : '')}</Tag>
               </Flex>
 
               <Flex gap={10} align="center" className={cls.btns}>
-                <Button type="primary" icon={<EditOutlined/>} iconPosition="end"><Link href={`/products/incoming/edit/${incomingItem?.id}/`}>Редактировать</Link></Button>
-                {/* <Button type="primary" icon={<EditOutlined/>} iconPosition="end" className={cls.edit}>Редактировать</Button> */}
+                <Button type="primary" icon={<EditOutlined/>} iconPosition="end"><Link href={`/products/incoming/edit/${incomingItem?.id}/`}>Өзгөртүү</Link></Button>
               </Flex>
             </Flex>
           </div>
 
           <Flex className={cls.incoming_info} vertical>
             <Flex className={cls.incoming_info__block}>
-              <h3 className={cls.details_title}>Детали прихода</h3>
+              <h3 className={cls.details_title}>Приходнун деталдары</h3>
             </Flex>
 
             <Flex className={cls.details_items} vertical gap={10}>
@@ -77,19 +76,19 @@ export const View: React.FC<Props> = ({ incoming_id }) => {
                       </Flex>
 
                       <div className={cls.act}>
-                        <span className={cls.heading}>Срок годности:</span> {product.product.expiration_date}
+                        <span className={cls.heading}>Жарактуулук мөөнөтү:</span> {product.product.expiration_date}
                       </div>
 
                       <div>
-                        <span className={cls.heading}>Кол-во:</span> {product.quantity}
+                        <span className={cls.heading}>Саны:</span> {product.quantity}
                       </div>
 
                       <div>
-                        <span className={cls.heading}>Цена за товар:</span> {product.product.price}
+                        <span className={cls.heading}>Товардын баасы:</span> {product.product.price}
                       </div>
 
                       <div>
-                        <span className={cls.heading}>Общая цена за товар:</span> {product.purchase_price}
+                        <span className={cls.heading}>Товардын жалпы баасы:</span> {product.purchase_price}
                       </div>
 
                       <Image src={`${NEXT_PUBLIC_COMPANY_BASE_URL}${product.product.barcode}`} className={cls.barcode} alt="barcode" width={120} height={50} />
@@ -103,16 +102,16 @@ export const View: React.FC<Props> = ({ incoming_id }) => {
 
             <Flex className={cls.total} vertical gap={5}>
               <span className={cls.total_quantity}>
-                <span className={cls.heading}>Общее кол-во прихода:</span> {incomingItem?.total_quantity}
+                <span className={cls.heading}>Кирген товарлардын жалпы саны:</span> {incomingItem?.total_quantity}
               </span>
               <span className={cls.total_quantity}>
-                <span className={cls.heading}>Общая цена прихода:</span> {incomingItem?.total_price}
+                <span className={cls.heading}>Кирген товарлардын жалпы баасы:</span> {incomingItem?.total_price}
               </span>
             </Flex>
           </Flex>
 
           <Flex className={cls.docs} vertical>
-            <h1 className={cls.details_title}>Документы прихода</h1>
+            <h1 className={cls.details_title}>Приход документтери</h1>
 
             <Flex className={cls.docs_items} vertical gap={10}>
               {

@@ -19,7 +19,7 @@ const { Paragraph } = Typography
 const createColumns = (checkStatus: any, getTagColor: any): ColumnsType<ProductsStorageRequestTypes.Table> => {
   const columns: ColumnsType<ProductsStorageRequestTypes.Table> = [
     {
-      title: 'Номер документа',
+      title: 'Документ номери',
       dataIndex: 'act',
       key: 'act',
       render: (_, record) => (
@@ -27,7 +27,7 @@ const createColumns = (checkStatus: any, getTagColor: any): ColumnsType<Products
       ),
     },
     {
-      title: 'Кол-во товаров',
+      title: 'Товар саны',
       dataIndex: 'total_quantity',
       key: 'total_quantity',
     },
@@ -46,18 +46,16 @@ const createColumns = (checkStatus: any, getTagColor: any): ColumnsType<Products
       render: (date: string) => {
         const formatted = dayjs(date).format('DD.MM.YYYY')
 
-        return (
-          <span>{formatted}</span>
-        )
+        return <span>{formatted}</span>
       },
     },
     {
-      title: 'Поставщик',
+      title: 'Жеткирүүчү',
       dataIndex: 'supplier',
       key: 'supplier',
     },
     {
-      title: 'Ответственный',
+      title: 'Жооптуу адам',
       dataIndex: 'responsible',
       key: 'responsible',
       render: (responsible: ProductsStorageRequestTypes.Responsible) => (
@@ -112,22 +110,18 @@ export const List: React.FC = () => {
         <Flex className={cls.header} align="center" justify="space-between">
           <div className={cls.navigation__info}>
             <Breadcrumb items={breadcrumbData}/>
-            <h2>Заявки на склад</h2>
+            <h2>Складга болгон заявкалар</h2>
           </div>
 
           <Flex className={cls.panel} gap={10}>
             <SelectField
-              options={
-                [
-                  { value: 'incoming', label: 'Приход' },
-                  { value: 'outgoing', label: 'Уход' },
-                ]
-              }
+              options={[
+                { value: 'incoming', label: 'Приход' },
+                { value: 'outgoing', label: 'Уход' },
+              ]}
               defaultValue={'incoming'}
               className={cls.select_type}
-              onChange={(value) => {
-                setType(value)
-              }}
+              onChange={(value) => setType(value)}
             />
             <div className={cls.approve}>
               <Button
@@ -141,7 +135,7 @@ export const List: React.FC = () => {
                   }
                 }}
               >
-                Принять
+                Кабыл алуу
               </Button>
             </div>
             <div className={cls.cancel}>
@@ -156,11 +150,12 @@ export const List: React.FC = () => {
                   }
                 }}
               >
-                Отклонить
+                Таштоо
               </Button>
             </div>
           </Flex>
         </Flex>
+
         <Table<ProductsStorageRequestTypes.Table>
           columns={createColumns(checkStatus, getTagColor)}
           dataSource={storageRequestList || []}
@@ -168,14 +163,12 @@ export const List: React.FC = () => {
           loading={isStorageRequestLoading}
           scroll={{ x: 'max-content' }}
           rootClassName={cls.table}
-          rowSelection={
-            {
-              type: 'checkbox',
-              onChange: (selectedRowKey) => {
-                setSelectedRowKeys(selectedRowKey)
-              },
-            }
-          }
+          rowSelection={{
+            type: 'checkbox',
+            onChange: (selectedRowKey) => {
+              setSelectedRowKeys(selectedRowKey)
+            },
+          }}
           pagination={false}
           rowClassName={(_, index) => (index % 2 !== 0 ? cls.evenRow : cls.oddRow)}
           expandable={{
@@ -183,15 +176,20 @@ export const List: React.FC = () => {
             expandedRowRender: (record) => (
               <Table
                 columns={[
-                  { title: 'Товар', dataIndex: 'product_title', key: 'product_title', render: (_, record) => (
-                    <Link href={`/product/${record.product.slug}`}>{record.product.title}</Link>
-                  ) },
-                  { title: 'Количество', dataIndex: 'quantity', key: 'quantity' },
-                  { title: 'Цена закупки', dataIndex: 'purchase_price', key: 'purchase_price' },
-                  { title: 'Общая стоимость', dataIndex: 'total_price', key: 'total_price' },
+                  {
+                    title: 'Товар',
+                    dataIndex: 'product_title',
+                    key: 'product_title',
+                    render: (_, record) => (
+                      <Link href={`/product/${record.product.slug}`}>{record.product.title}</Link>
+                    ),
+                  },
+                  { title: 'Саны', dataIndex: 'quantity', key: 'quantity' },
+                  { title: 'Сатып алуу баасы', dataIndex: 'purchase_price', key: 'purchase_price' },
+                  { title: 'Жалпы сумма', dataIndex: 'total_price', key: 'total_price' },
                 ]}
                 dataSource={record.items}
-                rowKey={(item) => item.product.slug ? item.product.slug : ''}
+                rowKey={(item) => item.product.slug || ''}
                 pagination={false}
                 size="small"
               />

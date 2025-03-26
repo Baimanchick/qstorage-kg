@@ -58,13 +58,13 @@ function useList() {
 
         if (response.status === 200) {
           api.success({
-            message: 'Увольнение прошло успешно',
+            message: 'Иштен бошотуу ийгиликтүү өттү',
             placement: 'top',
           })
           await getEmployeesList()
         } else {
           api.error({
-            message: 'Что-то пошло не так',
+            message: 'Бир нерсе туура эмес кетти',
             placement: 'top',
           })
         }
@@ -99,13 +99,13 @@ function useList() {
 
       if (response.status === 200) {
         api.success({
-          message: 'Сотрудник успешно был изменён',
+          message: 'Кызматкер ийгиликтүү өзгөртүлдү',
           placement: 'top',
         })
         await getEmployeesList()
       } else {
         api.error({
-          message: 'Что-то пошло не так',
+          message: 'Бир нерсе туура эмес кетти',
           placement: 'top',
         })
       }

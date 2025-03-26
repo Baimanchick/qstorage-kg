@@ -77,7 +77,7 @@ export const SideBar: React.FC<Props> = (props) => {
           }
         }}
         >
-          <h3 className={cls.exit_title}>Выйти</h3>
+          <h3 className={cls.exit_title}>Чыгуу</h3>
 
           <LogoutOutlined className={cls.svg} />
         </Flex>

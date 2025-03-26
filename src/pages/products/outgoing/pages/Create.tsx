@@ -41,12 +41,12 @@ const createColumns = () => {
       ),
     },
     {
-      title: 'Кол-во',
+      title: 'Саны',
       dataIndex: 'stock',
       key: 'stock',
     },
     {
-      title: 'Срок годности',
+      title: 'Жарактуулук мөөнөтү',
       dataIndex: 'expiration_date',
       key: 'expiration_date',
     },
@@ -66,12 +66,12 @@ const createColumns = () => {
       ),
     },
     {
-      title: 'Склады',
+      title: 'Складдар',
       dataIndex: 'warehouse',
       key: 'warehouse',
     },
     {
-      title: 'Цена',
+      title: 'Баасы',
       dataIndex: 'price',
       key: 'price',
     },
@@ -107,7 +107,7 @@ const createSelectedProductsColumns = (setSelectedProducts: any) => {
       ),
     },
     {
-      title: 'Количество товара',
+      title: 'Товардын саны',
       dataIndex: 'quantity',
       key: 'quantity',
       render: (_, record) => (
@@ -120,7 +120,7 @@ const createSelectedProductsColumns = (setSelectedProducts: any) => {
       ),
     },
     {
-      title: 'Цена закупки',
+      title: 'Сатып алуу баасы',
       dataIndex: 'purchase_price',
       key: 'purchase_price',
       render: (_, record) => (
@@ -133,7 +133,7 @@ const createSelectedProductsColumns = (setSelectedProducts: any) => {
       ),
     },
     {
-      title: 'Общая стоимость',
+      title: 'Жалпы сумма',
       dataIndex: 'sum',
       key: 'sum',
       render: (_, record) => {
@@ -141,7 +141,6 @@ const createSelectedProductsColumns = (setSelectedProducts: any) => {
 
         return <span>{totalPrice ? totalPrice : 0} сом.</span>
       },
-
     },
   ]
 
@@ -188,13 +187,13 @@ export const Create = () => {
           <Breadcrumb items={breadcrumbData}/>
         </div>
 
-        <h1 className={cls.main__title}>Создать уход товаров</h1>
+        <h1 className={cls.main__title}>Товар Уход түзүү</h1>
 
         <Flex vertical className={cls.form}>
           <Form id="createIncoming" form={form} onFinish={(data) => createOutgoing(data)}>
             <Flex className={cls.products} vertical gap={20}>
               <Flex gap={20} vertical className={cls.selected_products_table}>
-                <h1 className={cls.products__title}>Выбрано товаров: <span className={cls.counter}>{selectedProducts.length} товаров</span></h1>
+                <h1 className={cls.products__title}>Тандалган товарлар: <span className={cls.counter}>{selectedProducts.length} товар</span></h1>
 
                 <Table
                   columns={createSelectedProductsColumns(setSelectedProducts)}
@@ -214,13 +213,12 @@ export const Create = () => {
               <Flex gap={20} className={cls.products_table} vertical>
                 <Flex className={cls.products_header} justify="space-between" align="center">
                   <Flex align="center" gap={20} className={cls.search_and_title}>
-                    <h1 className={cls.products__title}>Товары:</h1>
-
+                    <h1 className={cls.products__title}>Товарлар:</h1>
                     <SearchField onChange={(e) => handleSearchProducts(e)} />
                   </Flex>
 
                   <Flex gap={15} className={cls.create_btn}>
-                    <Button onClick={createModal.onOpen} className={cls.filter_btn} type="primary">Создать товар</Button>
+                    <Button onClick={createModal.onOpen} className={cls.filter_btn} type="primary">Товар түзүү</Button>
                   </Flex>
                 </Flex>
 
@@ -249,16 +247,16 @@ export const Create = () => {
               <TextField
                 name="act"
                 type="text"
-                label="Номер документа:"
-                placeholder="Введите номер"
+                label="Документтин номери:"
+                placeholder="Номер киргизиңиз"
                 className={cls.form__item}
                 rules={InputRules.DocumentNumber}
               />
               <TextField
                 name="supplier"
                 type="text"
-                label="Поставщик:"
-                placeholder="Введите поставщика"
+                label="Жеткирүүчү:"
+                placeholder="Жеткирүүчүнү киргизиңиз"
                 className={cls.form__item}
                 rules={InputRules.Field}
               />
@@ -266,7 +264,7 @@ export const Create = () => {
                 name="message"
                 type="text"
                 label="Комментарий"
-                placeholder="Введите комментарий для прихода"
+                placeholder="Уход үчүн комментарий жазыңыз"
                 className={cls.form__item}
               />
               {
@@ -274,8 +272,8 @@ export const Create = () => {
                   <SelectField
                     name="responsible"
                     className={cls.form__item}
-                    placeholder="Выберите ответственного"
-                    label="Ответственный:"
+                    placeholder="Жооптуу адамды тандаңыз"
+                    label="Жооптуу:"
                     options={userResponsible?.map(responsible => ({
                       title: responsible.first_name,
                       value: `${responsible.first_name} ${responsible.last_name}`,
@@ -294,8 +292,8 @@ export const Create = () => {
             </Flex>
 
             <Flex gap={10}>
-              <Button type="primary" style={{ width: '150px' }} disabled={submitted} htmlType="submit" form="createIncoming">Создать</Button>
-              <Button style={{ width: '150px' }} disabled={submitted}>Отмена</Button>
+              <Button type="primary" style={{ width: '150px' }} disabled={submitted} htmlType="submit" form="createIncoming">Түзүү</Button>
+              <Button style={{ width: '150px' }} disabled={submitted}>Баш тартуу</Button>
             </Flex>
           </Form>
         </Flex>

@@ -174,7 +174,7 @@ function useEdit() {
       const response = await ProductsIncoming.API.Edit.addFiles(formData, id)
 
       if (response.status === 201) {
-        message.success('Файлы успешно загрузились')
+        message.success('Файлдар ийгиликтүү жүктөлдү')
       }
     } catch (error) {
       console.log('error', error)

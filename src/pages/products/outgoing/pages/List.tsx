@@ -9,7 +9,6 @@ import dayjs from 'dayjs'
 import Link from 'next/link'
 
 import { Breadcrumb } from '@/shared/ui/breadcrumb/breadcrumb'
-// import { FilterPanel } from '@/shared/ui/filter-panel/filter-panel'
 
 import { ProductsOutgoing } from '..'
 import cls from '../styles/list.module.css'
@@ -20,7 +19,7 @@ const { Paragraph } = Typography
 const createColumns = (checkStatus: any, getTagColor: any): ColumnsType<ProductsOutgoingTypes.Table> => {
   const columns: ColumnsType<ProductsOutgoingTypes.Table> = [
     {
-      title: 'ID ухода',
+      title: 'Уход ID',
       dataIndex: 'id',
       key: 'id',
       render: (_, record) => (
@@ -28,23 +27,15 @@ const createColumns = (checkStatus: any, getTagColor: any): ColumnsType<Products
       ),
     },
     {
-      title: 'Номер документа',
+      title: 'Документтин номери',
       dataIndex: 'act',
       key: 'act',
       render: (_, record) => (
         <Link href={`${record.document}`}>#{record.act}</Link>
       ),
     },
-    // {
-    //   title: 'Проект',
-    //   dataIndex: 'project',
-    //   key: 'project',
-    //   render: (project: ProductsIncomingTypes.Project) => (
-    //     <span>{project.title}</span>
-    //   ),
-    // },
     {
-      title: 'Кол-во товаров',
+      title: 'Товарлардын саны',
       dataIndex: 'total_quantity',
       key: 'total_quantity',
     },
@@ -63,18 +54,16 @@ const createColumns = (checkStatus: any, getTagColor: any): ColumnsType<Products
       render: (date: string) => {
         const formatted = dayjs(date).format('DD.MM.YYYY')
 
-        return (
-          <span>{formatted}</span>
-        )
+        return <span>{formatted}</span>
       },
     },
     {
-      title: 'Поставщик',
+      title: 'Жеткирүүчү',
       dataIndex: 'supplier',
       key: 'supplier',
     },
     {
-      title: 'Ответственный',
+      title: 'Жооптуу',
       dataIndex: 'responsible',
       key: 'responsible',
       render: (responsible: ProductsOutgoingTypes.Responsible) => (
@@ -85,13 +74,11 @@ const createColumns = (checkStatus: any, getTagColor: any): ColumnsType<Products
       title: 'Комментарий',
       dataIndex: 'message',
       key: 'message',
-      render: (comment: string) => {
-        return (
-          <Popover overlayClassName={cls.card} className={cls.custom__popover} content={comment}>
-            <Paragraph>{!comment ? '' : `${comment.slice(0, 10)}...`}...</Paragraph>
-          </Popover>
-        )
-      },
+      render: (comment: string) => (
+        <Popover overlayClassName={cls.card} className={cls.custom__popover} content={comment}>
+          <Paragraph>{!comment ? '' : `${comment.slice(0, 10)}...`}...</Paragraph>
+        </Popover>
+      ),
     },
   ]
 
@@ -122,7 +109,7 @@ export const ListProductsIncoming: React.FC = () => {
       <div className="main">
         <div className={cls.navigation__info}>
           <Breadcrumb items={breadcrumbData}/>
-          <h2>Уход товаров</h2>
+          <h2>Товар Уход</h2>
         </div>
         <div className={cls.header}>
           <Flex gap={8} className={cls.header__btn}>
@@ -134,8 +121,9 @@ export const ListProductsIncoming: React.FC = () => {
             </Button>
           </Flex>
           <Flex gap={10} className={cls.filter_and_btn}>
-            {/* <FilterPanel defaultValue={'all_products'} options={[{ value: 'all_products', label: 'Все товары' }, { value: 'not_all_products', label: 'Не все товары' }]}/> */}
-            <Button type="primary" onClick={() => router.push('/products/outgoing/create')} className={cls.btn}>Добавить уход</Button>
+            <Button type="primary" onClick={() => router.push('/products/outgoing/create')} className={cls.btn}>
+              Уход кошуу
+            </Button>
           </Flex>
         </div>
         <Table<ProductsOutgoingTypes.Table>
@@ -152,12 +140,17 @@ export const ListProductsIncoming: React.FC = () => {
             expandedRowRender: (record) => (
               <Table
                 columns={[
-                  { title: 'Товар', dataIndex: 'product_title', key: 'product_title', render: (_, record) => (
-                    <Link href={`/product/${record.product.slug}`}>{record.product_title}</Link>
-                  ) },
-                  { title: 'Количество', dataIndex: 'quantity', key: 'quantity' },
-                  { title: 'Цена закупки', dataIndex: 'purchase_price', key: 'purchase_price' },
-                  { title: 'Общая стоимость', dataIndex: 'total_price', key: 'total_price' },
+                  {
+                    title: 'Товар',
+                    dataIndex: 'product_title',
+                    key: 'product_title',
+                    render: (_, record) => (
+                      <Link href={`/product/${record.product.slug}`}>{record.product_title}</Link>
+                    ),
+                  },
+                  { title: 'Саны', dataIndex: 'quantity', key: 'quantity' },
+                  { title: 'Сатып алуу баасы', dataIndex: 'purchase_price', key: 'purchase_price' },
+                  { title: 'Жалпы сумма', dataIndex: 'total_price', key: 'total_price' },
                 ]}
                 dataSource={record.items}
                 rowKey={(item) => item.product.slug ? item.product.slug : ''}

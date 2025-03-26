@@ -53,12 +53,12 @@ function useCreateProduct() {
 
       if (response.status === 201 || response.status === 200) {
         api.success({
-          message: 'Продукт успешно создан',
+          message: 'Продукт ийгиликтүү түзүлдү',
           placement: 'top',
         })
       } else {
         api.error({
-          message: 'Что-то пошло не так',
+          message: 'Бир нерсе туура эмес кетти',
           placement: 'top',
         })
       }

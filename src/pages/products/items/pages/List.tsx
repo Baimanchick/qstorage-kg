@@ -34,10 +34,10 @@ export const ListProducts: React.FC = () => {
     <div className="main">
       <div className={cls.navigation__info}>
         <Breadcrumb items={breadcrumbData}/>
-        <Button className={cls.btn} onClick={createModal.onOpen} type="primary">Создать товар</Button>
+        <Button className={cls.btn} onClick={createModal.onOpen} type="primary">Товар түзүү</Button>
       </div>
       <Flex className={cls.filterPanel}>
-        <h2>Товары</h2>
+        <h2>Товарлар</h2>
       </Flex>
       <div className={cls.products_main}>
         <List
@@ -85,7 +85,7 @@ export const ListProducts: React.FC = () => {
                         <div key={color.id} style={{ backgroundColor: color.hash_code }} className={cls.circle_color} />
                       ))
                     ) : (
-                      <div className={cls.no_colors}>Нет цветов</div>
+                      <div className={cls.no_colors}>Түстөр жок</div>
                     )}
                   </Flex>
                   <span>{parseInt(item.price)} сом</span>

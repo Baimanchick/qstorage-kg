@@ -25,7 +25,7 @@ const createColumns = (checkStatus: any, getTagColor: any, getModelName: any): C
       ),
     },
     {
-      title: 'Действие',
+      title: 'Иш-аракет',
       dataIndex: 'action',
       key: 'action',
       render: (action: string) => (
@@ -33,7 +33,7 @@ const createColumns = (checkStatus: any, getTagColor: any, getModelName: any): C
       ),
     },
     {
-      title: 'Тип',
+      title: 'Түрү',
       dataIndex: 'model_name',
       key: 'model_name',
       render: (model_name: string) => (
@@ -95,32 +95,32 @@ export const List = () => {
       </Flex>
 
       <Flex className={cls.inventory_info}>
-        <h2>История</h2>
+        <h2>Тарых</h2>
         <div className={cls.inventory_info_main}>
           <div className={cls.inventory_info_container}>
             <Flex className={cls.filter} gap={10}>
               <SelectField
                 name="actions"
                 options={[
-                  { value: 'all', label: 'Все' },
+                  { value: 'all', label: 'Бардыгы' },
                   {
                     value: 'created',
-                    label: 'СОЗДАНИЕ',
+                    label: 'ЖАРАТУУ',
                   },
                   {
                     value: 'updated',
-                    label: 'ИЗМЕНЕНИЕ',
+                    label: 'ӨЗГӨРТҮҮ',
                   },
                   {
                     value: 'deleted',
-                    label: 'УДАЛЕНИЕ',
+                    label: 'ӨЧҮРҮҮ',
                   },
                   {
                     value: 'verified',
-                    label: 'ПОДТВЕРЖДЕНИЕ',
+                    label: 'ТЕКШЕРҮҮ',
                   },
                 ]}
-                placeholder={'Действие'}
+                placeholder={'Иш-аракет'}
                 style={{ width: '150px' }}
                 onChange={(value) => setSelectedAction(value)}
                 allowClear
@@ -128,7 +128,7 @@ export const List = () => {
               <SelectField
                 name="model_name"
                 options={[
-                  { value: 'all', label: 'Все' },
+                  { value: 'all', label: 'Бардыгы' },
                   {
                     value: 'Incoming',
                     label: 'Приход',
@@ -147,13 +147,13 @@ export const List = () => {
               <SelectField
                 name="user"
                 options={[
-                  { value: 'all', label: 'Все' },
+                  { value: 'all', label: 'Бардыгы' },
                   ...users?.map((item) => ({
                     value: item.uuid,
                     label: `${item.first_name} ${item.last_name}`,
                   })) || [],
                 ]}
-                placeholder={'Пользователи'}
+                placeholder={'Колдонуучулар'}
                 style={{ width: '150px' }}
                 onChange={(value) => setSelectedUser(value)}
                 allowClear
@@ -170,7 +170,6 @@ export const List = () => {
                 rowClassName={(_, index) => (index % 2 !== 0 ? cls.evenRow : cls.oddRow)}
                 pagination={false}
               />
-
             </Flex>
             <Pagination
               className={cls.pagination}

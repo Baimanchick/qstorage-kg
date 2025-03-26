@@ -19,7 +19,7 @@ import { EmployeeTypes } from '../types'
 const createColumns = (handleSelectedEmployee: (employee: EmployeeTypes.Item) => void, onOpenFireModal: () => void, router: any) => {
   const columns: ColumnsType<EmployeeTypes.Item> = [
     {
-      title: 'ФИО',
+      title: 'Аты',
       dataIndex: 'first_name',
       key: 'first_name',
       render: (_, record) => (
@@ -34,7 +34,7 @@ const createColumns = (handleSelectedEmployee: (employee: EmployeeTypes.Item) =>
       ),
     },
     {
-      title: 'Должность',
+      title: 'Кызматы',
       dataIndex: 'role',
       key: 'role',
       render: (_, record) => (
@@ -42,7 +42,7 @@ const createColumns = (handleSelectedEmployee: (employee: EmployeeTypes.Item) =>
       ),
     },
     {
-      title: 'Действие',
+      title: 'Иш-аракет',
       dataIndex: 'actions',
       key: 'actions',
       render: (_, record) => (
@@ -53,7 +53,7 @@ const createColumns = (handleSelectedEmployee: (employee: EmployeeTypes.Item) =>
           }}
           />
 
-          <Button onClick={() => router.push(`/employees/edit/${record.uuid}`)}>Изменить</Button>
+          <Button onClick={() => router.push(`/employees/edit/${record.uuid}`)}>Өзгөртүү</Button>
         </Flex>
       ),
     },
@@ -89,7 +89,7 @@ export const List = () => {
       <Flex className={cls.main_title} justify="space-between" align="center">
         <h2>Персонал</h2>
 
-        <Button type="primary" onClick={() => router.push('/employees/create/')}>Добавить сотрудника</Button>
+        <Button type="primary" onClick={() => router.push('/employees/create/')}>Кызматкер кошуу</Button>
       </Flex>
 
       <Table

@@ -70,13 +70,13 @@ function useEdit() {
 
       if (response.status === 200) {
         api.success({
-          message: 'Проект успешно был изменён',
+          message: 'Долбоор ийгиликтүү өзгөртүлдү',
           placement: 'top',
         })
         router.push(`/projects/${id}`)
       } else {
         api.error({
-          message: 'Что-то пошло не так',
+          message: 'Бир нерсе туура эмес кетти',
           placement: 'top',
         })
       }

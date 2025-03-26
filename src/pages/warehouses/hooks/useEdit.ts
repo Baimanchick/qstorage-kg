@@ -46,13 +46,13 @@ function useEdit() {
 
       if (respose.status === 200) {
         api.success({
-          message: 'Склад успешно был изменен',
+          message: 'Кампа ийгиликтүү өзгөртүлдү',
           placement: 'top',
         })
         router.push('/warehouses/')
       } else {
         api.error({
-          message: 'Что-то пошло не так',
+          message: 'Бир нерсе туура эмес кетти',
           placement: 'top',
         })
       }

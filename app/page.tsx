@@ -7,8 +7,8 @@ import { Button } from 'antd'
 const page = () => {
   return (
     <div>
-      иди на /auth
-      <Button>Отправить</Button>
+      /auth барагына өт
+      <Button>Жөнөтүү</Button>
     </div>
   )
 }
