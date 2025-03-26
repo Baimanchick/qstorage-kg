@@ -1,0 +1,106 @@
+.filter__panel{
+    gap: 8px;
+}
+
+.inventory_info h2{
+    font-weight: 400;
+    font-size: 24px;
+}
+
+.nav{
+    justify-content: space-between;
+}
+
+.custom__popover{
+    cursor: pointer;
+}
+
+.card{
+    width: 400px !important;
+}
+
+.inventory_info_item {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.inventory_info{
+    margin: 13px 0px 17px 0px;
+    flex-direction: column !important;
+    gap: 2px;
+    width: 100% !important;
+}
+
+.filter_panel{
+    gap: 10px;
+}
+
+.sub_title{
+    color: #FA541C;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.stock_number{
+    color: #FA541C;
+    font-size: 24px;
+    font-weight: 400;
+}
+
+
+.table {
+    border: 1px solid #6c63ff;
+    border-radius: 8px;
+    width: 100%;
+}
+
+.evenRow {
+    background-color: #F4F3FF !important;
+}
+
+.table :global(.ant-table) {
+    border-radius: 8px !important;
+}
+
+.table :global(.ant-table-thead > tr > th) {
+    background-color: #F4F3FF !important;
+}
+
+.table :global(.ant-table-thead > tr:first-child >th:first-child) {
+    border-start-start-radius: 8px !important;
+}
+
+.table :global(.ant-table-thead > tr:first-child >th:last-child) {
+    border-start-end-radius: 8px !important;
+}
+
+.table :global(.ant-table-thead >tr>th) {
+    font-weight: 500 !important;
+    color: #0d1924 !important;
+}
+
+.table :global(.ant-empty-normal) {
+    margin-block: unset;
+}
+
+.table :global(.ant-table-tbody > tr:last-child) {
+    border-end-start-radius: 8px !important;
+    border-end-end-radius: 8px !important;
+}
+
+.table :global(.ant-table-tbody > tr:last-child > td:last-child) {
+    border-end-end-radius: 8px !important;
+}
+
+.table :global(.ant-table-tbody > tr:last-child > td:first-child) {
+    border-end-start-radius: 8px !important;
+}
+
+.pagination {
+    margin-top: 20px !important;
+    justify-content: flex-end;
+}
+
+.filter {
+    margin-top: 20px;
+}

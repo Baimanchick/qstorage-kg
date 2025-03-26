@@ -1,0 +1,43 @@
+.filter__panel{
+    gap: 8px;
+}
+
+.inventory_info h2{
+    font-weight: 400;
+    font-size: 24px;
+}
+
+.nav{
+    justify-content: space-between;
+}
+
+.custom__popover{
+    cursor: pointer;
+}
+
+.card{
+    width: 400px !important;
+}
+
+.inventory_info{
+    margin: 13px 0px 17px 0px;
+    flex-direction: column !important;
+    gap: 2px;
+    width: 100% !important;
+}
+
+.filter_panel{
+    gap: 10px;
+}
+
+.sub_title{
+    color: #6c63ff;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.stock_number{
+    color: #6c63ff;
+    font-size: 24px;
+    font-weight: 400;
+}
