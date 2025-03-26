@@ -32,12 +32,12 @@ export const ManagerSidebarMenuRoutes: MenuItem[] = [
   },
   {
     key: '/products/items',
-    label: 'Все товары',
+    label: 'Бардыгы товарлар',
     icon: <AppstoreOutlined />,
   },
   {
     key: '/stock',
-    label: 'Остатки товара',
+    label: 'Калган товарлар',
     icon: <BarsOutlined />,
   },
   {

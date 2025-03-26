@@ -276,8 +276,8 @@ export const Edit = ({ incoming_id }: Props) => {
                   <TextField
                     name="supplier"
                     type="text"
-                    label="Жеткирүүчү:"
-                    placeholder="Жеткирүүчүнү киргизиңиз"
+                    label="Поставщик:"
+                    placeholder="Поставщикти киргизиңиз"
                     className={cls.form__item}
                     rules={InputRules.Field}
                   />

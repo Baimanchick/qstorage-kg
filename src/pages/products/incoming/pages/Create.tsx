@@ -251,8 +251,8 @@ export const Create = () => {
               <TextField
                 name="supplier"
                 type="text"
-                label="ЖетПриходчү:"
-                placeholder="ЖетПриходчүнү киргизиңиз"
+                label="Поставщик"
+                placeholder="Поставщикти киргизиңиз"
                 className={cls.form__item}
                 rules={InputRules.Field}
               />

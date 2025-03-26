@@ -58,7 +58,7 @@ const createColumns = (checkStatus: any, getTagColor: any): ColumnsType<Products
       },
     },
     {
-      title: 'Жеткирүүчү',
+      title: 'Поставщик',
       dataIndex: 'supplier',
       key: 'supplier',
     },

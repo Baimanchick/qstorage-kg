@@ -23,7 +23,7 @@ function useEdit() {
 
   const breadcrumbData = [
     { href: '/', title: 'Главная' },
-    { href: '/products/items', title: 'Все товары' },
+    { href: '/products/items', title: 'Бардыгы товарлар' },
     { href: '/', title: items?.title },
     { href: '#', title: 'Изменить' },
   ]

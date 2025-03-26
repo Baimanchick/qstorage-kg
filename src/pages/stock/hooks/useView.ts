@@ -14,7 +14,7 @@ function useView() {
 
   const breadcrumbData = [
     { href: '/', title: 'Главная' },
-    { href: '/inventory', title: 'Остатки товара' },
+    { href: '/inventory', title: 'Калган товарлар' },
   ]
 
   const StockGET = React.useCallback(async (page: number = 1) => {
